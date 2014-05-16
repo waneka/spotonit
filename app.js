@@ -27,8 +27,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// app.get('/', routes.index);
+app.use(function(req, res, next) {
+  if (req.query.url) {
+    res.redirect('/events/' + encodeURIComponent(req.query.url))
+  } else {
+    next()
+  }
+})
 
+app.get('/', url.index);
+app.get('/events/:url', url.otherEvents)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
