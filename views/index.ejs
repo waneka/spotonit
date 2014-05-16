@@ -5,7 +5,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Welcome to the <%= title %> API</h1>
+    <form action="/events/" method="GET">
+      <p>Enter the url here:</p>
+      <input type="text" name="url">
+      <input type="submit">
+    </form>
   </body>
 </html>
