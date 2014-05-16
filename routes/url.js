@@ -1,3 +1,4 @@
+var getUrls = require('../public/javascripts/helpers').getUrls
 
 /*
  * GET home page.
