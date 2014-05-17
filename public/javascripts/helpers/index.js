@@ -34,7 +34,6 @@ function findUrlsFromPage(rootUrl, callback) {
   request(rootUrl, function(err, res, body) {
     var matches = []
     var hrefMatcher = urlKey[hostname].hrefMatcher
-      // console.log(rootUrl)
     while (match = hrefMatcher.exec(body)) {
       matches.push(domain + match[1])
     }
